@@ -1,0 +1,30 @@
+# Local data and generated retrieval artifacts must not be committed.
+data/
+dataset/
+artifacts/
+models/
+*.faiss
+metadata.json
+manifest.json
+# Milvus Standalone persistent data (bind mounts from deploy/milvus/docker-compose.yml)
+deploy/milvus/volumes/
+volumes/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# Binaries, executables, and installers
+*.exe
+*.msi
+*.dll
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

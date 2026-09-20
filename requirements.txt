@@ -1,0 +1,17 @@
+# Tested dependency ranges; CPU-only PyTorch is sufficient.
+pandas>=2.2,<3
+numpy>=1.26,<3
+sentence-transformers>=3.0,<4
+# Milvus Python SDK, pinned to the version the Milvus v3.0.1 release notes pair with the server
+# image in deploy/milvus/docker-compose.yml. Installing it does NOT start a database server.
+pymilvus==3.0.1
+# Still needed to migrate legacy FAISS artifacts and for baseline verification; not used by the app.
+faiss-cpu>=1.8,<2
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+pydantic>=2.7,<3
+python-dotenv>=1.0.1,<2
+scikit-learn>=1.5,<2
+psutil>=6.0,<8
+pytest>=8.0,<9
+httpx>=0.27,<1

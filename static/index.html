@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lyrics semantic song search</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header><p class="eyebrow">LYRICS SEMANTIC SEARCH</p><h1>Find words that feel familiar.</h1>
+      <p class="note">Results are based on lyrics and inferred themes, not audio analysis.</p></header>
+    <form id="search-form" novalidate>
+      <label for="query">Describe a mood, theme, or atmosphere</label>
+      <div class="search-row"><input id="query" name="query" autocomplete="off" placeholder="Lonely and reflective after a breakup" required>
+      <select id="top-k" aria-label="Number of results"><option value="5">5 results</option><option value="10" selected>10 results</option><option value="20">20 results</option><option value="50">50 results</option></select>
+      <button id="search-button" type="submit">Search lyrics</button></div>
+    </form>
+    <div class="examples" aria-label="Example queries"><span>Try:</span>
+      <button type="button" data-query="Hopeful lyrics about starting over">Starting over</button>
+      <button type="button" data-query="Angry and defiant words about betrayal">Defiant betrayal</button>
+      <button type="button" data-query="Warm nostalgia about childhood">Childhood nostalgia</button>
+      <button type="button" data-query="Romantic longing for someone far away">Long-distance longing</button>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="results" aria-live="polite"></section>
+  </main>
+  <template id="result-template"><article class="card"><div class="rank"></div><div class="card-copy"><h2></h2><p class="artist"></p><p class="score"></p><p class="excerpt"></p><a class="source" target="_blank" rel="noopener noreferrer">Open source</a></div></article></template>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
